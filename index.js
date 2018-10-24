@@ -5,6 +5,8 @@ const { read } = require("./read");
 const { createArticle } = require("./createArticle");
 const { deleteArticle } = require("./deleteArticle");
 const { updateArticle } = require("./updateArticle");
+const { deleteComment } = require("./deleteComment");
+const { createComment } = require("./createComment");
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -16,8 +18,8 @@ const handlers = {
     '/api/articles/create': createArticle,
     '/api/articles/update': updateArticle,
     '/api/articles/delete': deleteArticle,
-    // '/api/comments/create': createComment,
-    // '/api/comments/delete': deleteComment
+    '/api/comments/create': createComment,
+    '/api/comments/delete': deleteComment
 };
 
 let data = fs.readFileSync('articles.json');
@@ -36,7 +38,8 @@ const server = http.createServer((req, res) => {
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
             if(result != null)
-            res.end(JSON.stringify(result));
+                res.end(JSON.stringify(result));
+            else res.end("");
         });
     });
 });

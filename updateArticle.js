@@ -1,5 +1,6 @@
 let articles = require('./articles.json');
 const log = require('./log');
+const fs = require("fs");
 const file = require('fs').createWriteStream('./logfile.log');
 function updateArticle(req, res, payload, cb) {
     let article = payload;
@@ -7,7 +8,11 @@ function updateArticle(req, res, payload, cb) {
     if (index !== -1) {
         articles.articles.splice(index, 1, article);
         log.log(file, '/api/articles/update', payload);
-        cb(null, null);
+        fs.writeFile('./articles.json', JSON.stringify(articles), (err)=>{
+            if(err)
+                throw Error(err);
+            cb(null, article);
+        });
     }
     else {
         cb('error');

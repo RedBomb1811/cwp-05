@@ -1,0 +1,51 @@
+{
+  "articles" : [
+    {
+      "id": 0,
+      "title": "title0",
+      "text": "text0",
+      "date": 0,
+      "author": "author0",
+      "comments": [
+        {
+          "id": 0,
+          "articleId": 0,
+          "text": "comment_text0",
+          "date": 0,
+          "author": "comment_author0"
+        },
+        {
+          "id": 1,
+          "articleId": 0,
+          "text": "comment_text1",
+          "date": 1,
+          "author": "comment_author1"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "title1",
+      "text": "text1",
+      "date": 1,
+      "author": "author1",
+      "comments": [
+        {
+          "id": 0,
+          "articleId": 1,
+          "text": "comment_text0",
+          "date": 0,
+          "author": "comment_author0"
+        },
+        {
+          "id": 1,
+          "articleId": 1,
+          "text": "comment_text1",
+          "date": 1,
+          "author": "comment_author1"
+        }
+      ]
+
+    }
+  ]
+}
