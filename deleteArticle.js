@@ -6,7 +6,7 @@ function deleteArticle(req, res, payload, cb) {
     if (index !== -1) {
         articles.articles.splice(index, 1);
         log.log(file, '/api/articles/delete', payload);
-        cb(null, 'article deleted');
+        cb(null, null);
     }
     else {
         cb('error');

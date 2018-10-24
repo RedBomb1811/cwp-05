@@ -7,7 +7,7 @@ function updateArticle(req, res, payload, cb) {
     if (index !== -1) {
         articles.articles.splice(index, 1, article);
         log.log(file, '/api/articles/update', payload);
-        cb(null, 'article updated');
+        cb(null, null);
     }
     else {
         cb('error');
