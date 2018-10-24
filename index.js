@@ -2,23 +2,22 @@ const http = require('http');
 const fs = require('fs');
 const { readAll } = require('./readAll');
 const { read } = require("./read");
-
-
+const { createArticle } = require("./createArticle");
+const { deleteArticle } = require("./deleteArticle");
+const { updateArticle } = require("./updateArticle");
 
 const hostname = '127.0.0.1';
 const port = 3000;
-
 let articles;
 
 const handlers = {
     '/api/articles/readall': readAll,
     '/api/articles/read': read,
-    // '/api/articles/create': createArticle,
-    // '/api/articles/update': updateArticle,
-    // '/api/articles/delete': deleteArticle,
+    '/api/articles/create': createArticle,
+    '/api/articles/update': updateArticle,
+    '/api/articles/delete': deleteArticle,
     // '/api/comments/create': createComment,
     // '/api/comments/delete': deleteComment
-
 };
 
 let data = fs.readFileSync('articles.json');
