@@ -1,3 +1,1 @@
-{
-	"logs": []
-}
+{"logs":[{"dateDay":7,"dateMonth":10,"dateYear":2018,"dateHours":0,"dateMinutes":48,"dateSeconds":17,"URL":"/api/articles/readAll","Request":"{\"sortField\":\"id\",\"sortOrder\":\"desc\",\"page\":1,\"limit\":10,\"includeDeps\":\"true\"}"},{"dateDay":7,"dateMonth":10,"dateYear":2018,"dateHours":0,"dateMinutes":48,"dateSeconds":18,"URL":"/api/articles/readAll","Request":"{\"sortField\":\"id\",\"sortOrder\":\"desc\",\"page\":1,\"limit\":10,\"includeDeps\":\"true\"}"},{"dateDay":7,"dateMonth":10,"dateYear":2018,"dateHours":0,"dateMinutes":48,"dateSeconds":20,"URL":"/api/articles/readAll","Request":"{\"sortField\":\"id\",\"sortOrder\":\"desc\",\"page\":1,\"limit\":10,\"includeDeps\":\"true\"}"},{"dateDay":7,"dateMonth":10,"dateYear":2018,"dateHours":0,"dateMinutes":53,"dateSeconds":42,"URL":"/api/logs","Request":"{\"sortField\":\"id\",\"sortOrder\":\"desc\",\"page\":1,\"limit\":10,\"includeDeps\":\"true\"}"}]}

@@ -1,9 +1,8 @@
 let articles = require('./articles.json');
 const log = require('./log');
-const file = require('fs').createWriteStream('./logfile.json', {flags: 'a'});
 
 function readAll(req, res, payload, cb) {
-    log.log(file, '/api/articles/readAll', payload);
+    log.log('/api/articles/readAll', payload);
     if(payload.sortField === undefined)
         payload.sortField = 'date';
     if(payload.sortOrder === undefined)

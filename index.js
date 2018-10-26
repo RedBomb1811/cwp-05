@@ -7,7 +7,7 @@ const { deleteArticle } = require("./deleteArticle");
 const { updateArticle } = require("./updateArticle");
 const { deleteComment } = require("./deleteComment");
 const { createComment } = require("./createComment");
-const { getLog } = require("./getLog.js");
+const { getLog } = require("./getLog");
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -20,7 +20,7 @@ const handlers = {
     '/api/articles/delete': deleteArticle,
     '/api/comments/create': createComment,
     '/api/comments/delete': deleteComment,
-    '/api/comments/getLog': getLog
+    '/api/logs': getLog
 
 };
 

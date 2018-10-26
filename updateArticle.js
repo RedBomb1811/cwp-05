@@ -1,13 +1,13 @@
 let articles = require('./articles.json');
 const log = require('./log');
 const fs = require("fs");
-const file = require('fs').createWriteStream('./logfile.json', {flags: 'a'});
+
 function updateArticle(req, res, payload, cb) {
     let article = payload;
     const index = articles.articles.findIndex(article => article.id === payload.id);
     if (index !== -1) {
         articles.articles.splice(index, 1, article);
-        log.log(file, '/api/articles/update', payload);
+        log.log('/api/articles/update', payload);
         fs.writeFile('./articles.json', JSON.stringify(articles), (err)=>{
             if(err)
                 throw Error(err);
