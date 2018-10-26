@@ -13,7 +13,7 @@ const port = 3000;
 let articles;
 
 const handlers = {
-    '/api/articles/readall': readAll,
+    '/api/articles/readAll': readAll,
     '/api/articles/read': read,
     '/api/articles/create': createArticle,
     '/api/articles/update': updateArticle,
