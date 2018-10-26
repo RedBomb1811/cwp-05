@@ -12,6 +12,8 @@ function readAll(req, res, payload, cb) {
         payload.page = 1;
     if(payload.limit === undefined)
         payload.limit = 10;
+    if(payload.includeDeps === undefined)
+        payload.includeDeps = 'false';
 
     articles.articles.sort((a, b)=>{
         if((a[payload.sortField] > b[payload.sortField]) ^ (payload.sortOrder === 'asc'))
@@ -29,6 +31,12 @@ function readAll(req, res, payload, cb) {
     reqArr.pages = Math.ceil(articles.articles.length / payload.limit);
     reqArr.count = articles.articles.length;
     reqArr.limit = payload.limit;
+
+    if(payload.includeDeps === 'false')
+        reqArr.items.forEach((elem)=>{
+            elem.comments = [];
+        });
+
 
     cb(null, reqArr);
 }
