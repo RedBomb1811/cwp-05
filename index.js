@@ -7,10 +7,10 @@ const { deleteArticle } = require("./deleteArticle");
 const { updateArticle } = require("./updateArticle");
 const { deleteComment } = require("./deleteComment");
 const { createComment } = require("./createComment");
+const { getLog } = require("./getLog.js");
 
 const hostname = '127.0.0.1';
 const port = 3000;
-let articles;
 
 const handlers = {
     '/api/articles/readAll': readAll,
@@ -19,11 +19,10 @@ const handlers = {
     '/api/articles/update': updateArticle,
     '/api/articles/delete': deleteArticle,
     '/api/comments/create': createComment,
-    '/api/comments/delete': deleteComment
-};
+    '/api/comments/delete': deleteComment,
+    '/api/comments/getLog': getLog
 
-let data = fs.readFileSync('articles.json');
-articles = JSON.parse(data);
+};
 
 const server = http.createServer((req, res) => {
     parseBodyJson(req, (err, payload) => {

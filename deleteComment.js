@@ -1,7 +1,7 @@
 let articles = require('./articles.json');
 const log = require('./log');
 const fs = require("fs");
-const file = require('fs').createWriteStream('./logfile.log');
+const file = require('fs').createWriteStream('./logfile.json', {flags: 'a'});
 function deleteComment(req, res, payload, cb) {
     try {
         let commentD = payload;

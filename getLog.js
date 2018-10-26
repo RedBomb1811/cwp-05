@@ -2,18 +2,8 @@ let articles = require('./articles.json');
 const log = require('./log');
 const file = require('fs').createWriteStream('./logfile.json', {flags: 'a'});
 
-function readAll(req, res, payload, cb) {
-    log.log(file, '/api/articles/readAll', payload);
-    if(payload.sortField === undefined)
-        payload.sortField = 'date';
-    if(payload.sortOrder === undefined)
-        payload.sortOrder = 'desc';
-    if(payload.page === undefined)
-        payload.page = 1;
-    if(payload.limit === undefined)
-        payload.limit = 10;
-    if(payload.includeDeps === undefined)
-        payload.includeDeps = 'false';
+function getLog(req, res, payload, cb) {
+    log.log(file, '/api/articles/getLog', payload);
 
     articles.articles.sort((a, b)=>{
         if((a[payload.sortField] > b[payload.sortField]) ^ (payload.sortOrder === 'asc'))
@@ -41,4 +31,4 @@ function readAll(req, res, payload, cb) {
 
     cb(null, reqArr);
 }
-exports.readAll = readAll;
+exports.getLog = getLog;

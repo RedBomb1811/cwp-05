@@ -1,7 +1,7 @@
 let articles = require('./articles.json');
 const log = require('./log');
 const fs = require("fs");
-const file = require('fs').createWriteStream('./logfile.log');
+const file = require('fs').createWriteStream('./logfile.json', {flags: 'a'});
 function createComment(req, res, payload, cb) {
     let comment = payload;
     const article = articles.articles.find(article => article.id === payload.articleId);

@@ -1,7 +1,7 @@
 let articles = require('./articles.json');
 const log = require('./log');
 const fs = require('fs');
-const file = require('fs').createWriteStream('./logfile.log');
+const file = require('fs').createWriteStream('./logfile.json', {flags: 'a'});
 function createArticle(req, res, payload, cb) {
     let article = payload;
     article.id = articles.articles.length;
@@ -14,7 +14,6 @@ function createArticle(req, res, payload, cb) {
                 throw Error(err);
             cb(null, article);
         });
-
     }
     else {
         cb('error');
